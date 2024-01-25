@@ -15,6 +15,7 @@ class LoginButtonWidget extends StatelessWidget {
           backgroundColor: background,
           elevation: 5,
         ),
+
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 5),
           child: Row(
