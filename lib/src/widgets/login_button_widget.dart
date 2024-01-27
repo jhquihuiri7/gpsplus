@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gps_plus/src/styles/text_styles.dart';
 
 class LoginButtonWidget extends StatelessWidget {
@@ -10,7 +11,9 @@ class LoginButtonWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-        onPressed: (){},
+        onPressed: (){
+          Navigator.pushReplacementNamed(context, 'preferences');
+        },
         style: ElevatedButton.styleFrom(
           backgroundColor: background,
           elevation: 5,
@@ -22,7 +25,7 @@ class LoginButtonWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Text(socialMedia, style: TextStyles().primaryTextTheme.titleSmall,),
-              Image(image: AssetImage(icon), height: 35,)
+              SvgPicture.asset(icon, height: 25),
             ],
           ),
         )
