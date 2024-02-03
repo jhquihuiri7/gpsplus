@@ -38,8 +38,8 @@ const List<Map<String, dynamic>> preferences_questions = <Map<String, dynamic>>[
   },
   {
     "question_id": 3,
-    "multiple_choice":true,
-    "other_answer":true,
+    "multiple_choice":false,
+    "other_answer":false,
     "question": "Tipo de alojamiento preferido",
     "answers": ["Hotel", "Hostal", "Casa residencial"]
   },

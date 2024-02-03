@@ -17,7 +17,7 @@ class _PreferencesPageState extends State<PreferencesPage> {
 
   final PageController controller = PageController(initialPage: 0);
   final ScrollController indexController = ScrollController();
-  final TextEditingController textController = TextEditingController();
+  TextEditingController textController = TextEditingController();
   List<bool> _isCheckedList = List.generate(15, (index) => false);
   bool _enableNext = false;
 
@@ -141,6 +141,17 @@ class _PreferencesPageState extends State<PreferencesPage> {
                                     child: Card(
                                       child: TextField(
                                         controller: textController,
+                                        onChanged: (value){
+                                          textController.text = value;
+                                          if(textController.text.isEmpty){
+                                            _enableNext = false;
+                                          }else{
+                                            _enableNext = true;
+                                          }
+                                          setState(() {
+
+                                          });
+                                        },
                                         showCursor: true,
                                         autofocus: true,
                                         decoration: const InputDecoration(
@@ -167,12 +178,19 @@ class _PreferencesPageState extends State<PreferencesPage> {
                                             for (bool element
                                                 in _isCheckedList) {
                                               if (element) {
-                                                _enableNext = true;
+                                                if (_isCheckedList[preferenceModel.answers.length-1] & preferenceModel.otherAnswer){
+                                                  if(textController.text == ''){
+                                                    _enableNext = false;
+                                                  }
+                                                }else{
+                                                  _enableNext = true;
+                                                }
                                                 break;
                                               } else {
                                                 _enableNext = false;
                                               }
                                             }
+
                                             setState(() {});
                                           }),
                                     ),
@@ -189,8 +207,9 @@ class _PreferencesPageState extends State<PreferencesPage> {
                   ElevatedButton(
                       onPressed: _enableNext
                           ? () {
+                              textController.text = '';
                               _isCheckedList.fillRange(0, _isCheckedList.length, false);
-                              if (activeId < 6) {
+                              if (activeId < preferences_questions.length-1) {
                                 controller.nextPage(
                                     duration: const Duration(milliseconds: 100),
                                     curve: Curves.ease);
@@ -207,7 +226,7 @@ class _PreferencesPageState extends State<PreferencesPage> {
                               _enableNext = false;
                             }
                           : null,
-                      child: (activeId < 6)
+                      child: (activeId < preferences_questions.length-1)
                           ? const Text("Siguiente")
                           : const Text("Finalizar")),
                   const SizedBox(
