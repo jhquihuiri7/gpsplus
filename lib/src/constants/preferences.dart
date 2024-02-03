@@ -1,26 +1,28 @@
 const List<Map<String, dynamic>> preferences_questions = <Map<String, dynamic>>[
   {
     "question_id": 0,
-    "question":"Yo soy:",
-    "answers": [
-      "Turista extranjero",
-      "Turista nacional",
-      "Residente"
-    ]
+    "multiple_choice":false,
+    "other_answer":true,
+    "question": "Yo soy:",
+    "answers": ["Turista extranjero", "Turista nacional", "Residente"]
   },
   {
     "question_id": 1,
-    "question":"Proposito de visita",
+    "multiple_choice":true,
+    "other_answer":true,
+    "question": "Proposito de visita",
     "answers": [
       "Cultura local",
       "Aventura y deporte",
-      "Naturaleza y paisajes"
+      "Naturaleza y paisajes",
       "Otro:"
     ]
   },
   {
     "question_id": 2,
-    "question":"Deporte y actividad preferida",
+    "multiple_choice":true,
+    "other_answer":true,
+    "question": "Deporte y actividad preferida",
     "answers": [
       "Ciclismo",
       "Senderismo",
@@ -36,16 +38,16 @@ const List<Map<String, dynamic>> preferences_questions = <Map<String, dynamic>>[
   },
   {
     "question_id": 3,
-    "question":"Tipo de alojamiento preferido",
-    "answers": [
-      "Hotel",
-      "Hostal",
-      "Casa residencial"
-    ]
+    "multiple_choice":true,
+    "other_answer":true,
+    "question": "Tipo de alojamiento preferido",
+    "answers": ["Hotel", "Hostal", "Casa residencial"]
   },
   {
     "question_id": 4,
-    "question":"Preferencia culinaria",
+    "multiple_choice":true,
+    "other_answer":true,
+    "question": "Preferencia culinaria",
     "answers": [
       "Comida tipica local",
       "Comida internacional",
@@ -55,7 +57,9 @@ const List<Map<String, dynamic>> preferences_questions = <Map<String, dynamic>>[
   },
   {
     "question_id": 5,
-    "question":"Ocupacion principal",
+    "multiple_choice":true,
+    "other_answer":true,
+    "question": "Ocupacion principal",
     "answers": [
       "Estudiante",
       "Servidor turistico",
@@ -69,7 +73,9 @@ const List<Map<String, dynamic>> preferences_questions = <Map<String, dynamic>>[
   },
   {
     "question_id": 6,
-    "question":"Informacion de interes local",
+    "multiple_choice":true,
+    "other_answer":true,
+    "question": "Informacion de interes local",
     "answers": [
       "Calendario de eventos",
       "Pronostico climatico",

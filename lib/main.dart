@@ -22,24 +22,28 @@ class MyApp extends StatelessWidget {
         primaryTextTheme: TextStyles().primaryTextTheme,
         elevatedButtonTheme: ElevatedButtonThemeData(
             style: ElevatedButton.styleFrom(
-              foregroundColor: Colors.black87,
-              padding: const EdgeInsets.symmetric(horizontal: 40),
-              backgroundColor: Colors.white70,
-              textStyle: TextStyles().primaryTextTheme.labelSmall
-            )),
+                foregroundColor: Colors.black87,
+                padding: const EdgeInsets.symmetric(horizontal: 40),
+                backgroundColor: Colors.white70,
+                textStyle: TextStyles().primaryTextTheme.labelSmall)),
         useMaterial3: true,
       ),
-      initialRoute: 'registraitonComplete',
+      initialRoute: 'preferences',
       onGenerateRoute: (settings) {
         switch (settings.name) {
           case 'login':
-            return PageTransition(child: const LoginPage(), type: PageTransitionType.bottomToTop);
+            return PageTransition(
+                child: const LoginPage(), type: PageTransitionType.bottomToTop);
           case 'launch':
-            return PageTransition(child: const FirstLaunchPage(), type: PageTransitionType.fade);
+            return PageTransition(
+                child: const FirstLaunchPage(), type: PageTransitionType.fade);
           case 'preferences':
-            return PageTransition(child: const PreferencesPage(), type: PageTransitionType.fade);
+            return PageTransition(
+                child: const PreferencesPage(), type: PageTransitionType.fade);
           case 'registraitonComplete':
-            return PageTransition(child: const RegistrationCompletePage(), type: PageTransitionType.fade);
+            return PageTransition(
+                child: const RegistrationCompletePage(),
+                type: PageTransitionType.fade);
           default:
             return null;
         }
