@@ -2,7 +2,7 @@ const List<Map<String, dynamic>> preferences_questions = <Map<String, dynamic>>[
   {
     "question_id": 0,
     "multiple_choice":false,
-    "other_answer":true,
+    "other_answer":false,
     "question": "Yo soy:",
     "answers": ["Turista extranjero", "Turista nacional", "Residente"]
   },

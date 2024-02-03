@@ -121,13 +121,11 @@ class _PreferencesPageState extends State<PreferencesPage> {
                           height: 30,
                         ),
                         Expanded(
-                          //height:300,
-                          //width: size.width,
                           child: ListView.builder(
                               itemCount: (_isCheckedList[
                                       preferenceModel.answers
                                               .length -
-                                          1])
+                                          1] & preferenceModel.otherAnswer)
                                   ? preferenceModel.answers
                                           .length +
                                       1
@@ -191,8 +189,7 @@ class _PreferencesPageState extends State<PreferencesPage> {
                   ElevatedButton(
                       onPressed: _enableNext
                           ? () {
-                              _isCheckedList =
-                                  List.generate(10, (index) => false);
+                              _isCheckedList.fillRange(0, _isCheckedList.length, false);
                               if (activeId < 6) {
                                 controller.nextPage(
                                     duration: const Duration(milliseconds: 100),
